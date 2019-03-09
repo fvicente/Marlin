@@ -518,7 +518,13 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // default settings
 
 // FGV
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,3055.5555,795.82} // 838
+#define NEMA17_FULL_STEPS 200.0
+#define NEMA17_MICROSTEPS 16.0
+#define NEMA17_MOTOR_STEPS (NEMA17_FULL_STEPS * NEMA17_MICROSTEPS)
+#define Z_ROD_PITCH 1.0
+#define Z_STEPS (NEMA17_MOTOR_STEPS / Z_ROD_PITCH)
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,Z_STEPS,795.82} // 838
 #define DEFAULT_MAX_FEEDRATE {500, 500, 1, 25}
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,200.0*8/3,760*1.1}  // default steps per unit for Ultimaker
 //#define DEFAULT_MAX_FEEDRATE          {500, 500, 5, 25}    // (mm/sec)
