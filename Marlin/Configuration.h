@@ -524,7 +524,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define Z_ROD_PITCH 1.0
 #define Z_STEPS (NEMA17_MOTOR_STEPS / Z_ROD_PITCH)
 // expected measurement / actual measurement
-#define ADJ_Z (60.0 / 63.0)
+#define ADJ_Z (60.0 / 63.3)
 #define Z_STEPS_ADJ (Z_STEPS * ADJ_Z) // 3047.619048
 
 #define ADJ_Y (32.0 / 30.9)
